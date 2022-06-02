@@ -207,7 +207,7 @@ if labelimg is True:
         success, image = cap.read()
         if image is not None:
             f = t_rdi[t_rdi['frame'] == count]
-            PILimg = Image.fromarray(image)  # Set up image to label
+            PILimg = Image.fromarray(image[ROI_y: (ROI_y + ROI_h), ROI_x: (ROI_x + ROI_w)])  # Image to label
             drawimg = ImageDraw.Draw(PILimg)  # " "
             for i in range(len(f)):
                 drawimg.text((f['x'].iloc[i], f['y'].iloc[i]), str(f['particle'].iloc[i]),
