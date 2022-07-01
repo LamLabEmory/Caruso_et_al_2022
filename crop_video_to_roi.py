@@ -23,7 +23,7 @@ import os
 import shutil
 import glob
 
-# Choose file using a file dialog
+# Choose file using a file dialog - test
 filepath = filedialog.askopenfilename(filetypes=[(".avi file", "*.avi")])
 filename = os.path.basename(filepath).split(".")[0]
 dir = os.path.dirname(filepath)
